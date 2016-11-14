@@ -1,0 +1,14 @@
+Mon Nov 14 10:31:58 EET 2016 : Сетевой сервер Apache Derby Network Server - 10.11.1.2 - (1629631) запущен и готов принимать соединения на порту 1527 на {3} 
+----------------------------------------------------------------
+Mon Nov 14 10:32:27 EET 2016:
+ Производится загрузка Derby версии The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): экземпляр a816c00e-0158-61f6-dddf-000000c00770
+в каталоге базы данных C:\Users\roma\Documents\NetBeansProjects\MyContactBook\ContactBookDB sun.misc.Launcher$AppClassLoader@1b84c92 
+
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_111-b14
+user.dir=C:\Users\roma\Documents\NetBeansProjects\MyContactBook
+os.name=Windows 7
+os.arch=x86
+os.version=6.1
+derby.system.home=null
+Запущен загрузчик классов базы данных - derby.database.classpath=''

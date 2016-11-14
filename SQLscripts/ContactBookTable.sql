@@ -1,0 +1,7 @@
+CREATE TABLE CONTACTBOOKS
+   (
+      ID BIGINT ,
+
+      CONSTRAINT CONTACTS_PK Primary Key (ID) 
+   
+    )

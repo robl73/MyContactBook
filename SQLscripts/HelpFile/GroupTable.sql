@@ -1,0 +1,7 @@
+CREATE TABLE GROUPS
+   (
+       ID INTEGER NOT NULL ,
+       TITLE VARCHAR(10) NOT NULL , 
+
+       CONSTRAINT GROUPS_PK Primary Key (ID)
+    )

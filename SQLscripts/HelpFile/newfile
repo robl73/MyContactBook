@@ -1,0 +1,70 @@
+//            
+//    @Override
+//    public long insert(Contact t) {
+//        ResultSet rs=JDBCUtillite.getResultSet("CONTACTS");
+//        long id= KeyGenerator.getRandomLong();
+//        
+//        {
+//            try {
+//                rs.moveToInsertRow();
+//                rs.updateLong("ID", id);
+//                rs.updateString("FIRSTNAME", t.getPerson().getFirstName());
+//                rs.updateString("LASTNAME", t.getPerson().getLastName());
+//                rs.updateString("BIRTHDAY", t.getPerson().getBirthday().toString());
+//                rs.updateString("GROUPS", t.getPerson().getGroup().toString());
+//                
+//                rs.updateString("ZIPCODE", t.getAdress().getZipCode());
+//                rs.updateString("CITY", t.getAdress().getCity());
+//                rs.updateString("STREET", t.getAdress().getStreet());
+//                rs.updateString("HOUSE", t.getAdress().getHouse());
+//                rs.updateString("FLAT", t.getAdress().getFlat());
+//                
+//                rs.updateString("EMAIL", t.getEmail());
+//                
+////               
+////                rs.updateString("COUNTRYCODE", t.getHomePhone().getCountryCode());
+////                rs.updateString("CITYCODE", t.getHomePhone().getCityCode());
+////                rs.updateString("NUMB", t.getHomePhone().getNumber());
+////                rs.updateString("PHONETYPE", t.getHomePhone().getPhoneType().toString());
+////                
+////                rs.updateString("COUNTRYCODE", t.getWorkPhone().getCountryCode());
+////                rs.updateString("CITYCODE", t.getWorkPhone().getCityCode());
+////                rs.updateString("NUMB", t.getWorkPhone().getNumber());
+////                rs.updateString("PHONETYPE", t.getWorkPhone().getPhoneType().toString());
+////                
+////                for(MobilePhone mph : t.getMobilePhones()){
+////                    rs.updateString("COUNTRYCODE", mph.getCountryCode());
+////                    rs.updateString("PROVIDERCODE", mph.getProviderCode());
+////                    rs.updateString("NUMB", mph.getNumber());
+////                }
+////        
+//        
+//                rs.updateString("HOMEPHONE_COUNTRYCODE", t.getHomePhone().getCountryCode());
+//                rs.updateString("HOMEPHONE_CITYCODE", t.getHomePhone().getCityCode());
+//                rs.updateString("HOMEPHONE_NUMB", t.getHomePhone().getNumber());
+//                rs.updateString("HOMEPHONE_PHONETYPE", t.getHomePhone().getPhoneType().toString());
+//                
+//                rs.updateString("WORKPHONE_COUNTRYCODE", t.getWorkPhone().getCountryCode());
+//                rs.updateString("WORKPHONE_CITYCODE", t.getWorkPhone().getCityCode());
+//                rs.updateString("WORKPHONE_NUMB", t.getWorkPhone().getNumber());
+//                rs.updateString("WORKPHONE_PHONETYPE", t.getWorkPhone().getPhoneType().toString());
+//                
+//                for(MobilePhone mph : t.getMobilePhones()){
+//                    rs.updateString("MOBILEPHONE_COUNTRYCODE", mph.getCountryCode());
+//                    rs.updateString("PROVIDERCODE", mph.getProviderCode());
+//                    rs.updateString("MOBILEPHONE_NUMB", mph.getNumber());
+//                }
+//                
+//
+//                rs.insertRow();
+//                rs.moveToCurrentRow();
+//                rs.close();
+//            } catch (SQLException ex) {
+//                Logger.getLogger(ContactService.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//            return id;
+//      }
+// 
+//       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
