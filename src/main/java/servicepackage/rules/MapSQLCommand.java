@@ -29,6 +29,7 @@ public class MapSQLCommand {
         SQLMAP.put("PHONES", "SQLscripts/CrudScripts/PhoneGetAll.sql");
         SQLMAP.put("MOBILEPHONES", "SQLscripts/CrudScripts/MobilePhoneGetAll.sql");
         SQLMAP.put("CONTACTS", "SQLscripts/CrudScripts/ContactGetAll.sql");
+        SQLMAP.put("MOBILEPHONEFORPERSON", "SQLscripts/CrudScripts/MobilePhoneForPerson.sql");
     }
  
     

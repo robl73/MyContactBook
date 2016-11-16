@@ -2,6 +2,7 @@
 import utillitepackage.Factory;
 import com.mycompany.contaktbook.entitypackage.*;
 import java.io.File;
+import java.util.Collection;
 import javax.json.JsonArray;
 import org.joda.time.LocalDate;
 import servicepackage.*;
@@ -133,6 +134,14 @@ Contact c4=new ContactService().getById(new ContactService().getIdBy(p1));
 System.out.println(c4);
 
 //=========================================================================
+
+
+
+Person p6=Factory.createPerson("Petrenko","Petro",new LocalDate("1985-05-15"),GroupEnum.FRIENDS);
+Collection<MobilePhone> cmph=new PersonService().getMobilePhones(p6);
+System.out.println(cmph);
+
+//==========================================================================
 
 
 // end of main method

@@ -7,14 +7,19 @@ package servicepackage;
 
 import utillitepackage.Factory;
 import com.mycompany.contaktbook.entitypackage.GroupEnum;
+import com.mycompany.contaktbook.entitypackage.MobilePhone;
 import servicepackage.interfaces.ServicePerson;
 import servicepackage.rules.RulePersonValidator;
 import utillitepackage.Validator;
 import com.mycompany.contaktbook.entitypackage.Person;
 import java.io.OutputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Formatter;
 import java.util.Locale;
 import java.util.Scanner;
@@ -30,6 +35,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 import servicepackage.rules.MapContactXML;
 import servicepackage.rules.MapPersonXML;
+import servicepackage.rules.MapSQLCommand;
 import utillitepackage.JDBCUtillite;
 import utillitepackage.XMLUtillite;
 import utillitepackage.KeyGenerator;
@@ -335,6 +341,48 @@ Scanner sc=new Scanner(System.in);
             return id;
       }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Collection<MobilePhone> getMobilePhones(Person p) {
+        
+        
+         String cmdfile;
+            cmdfile = MapSQLCommand.SQLMAP.get("MOBILEPHONEFORPERSON");
+            String sqlcmd=JDBCUtillite.getCommand(cmdfile);
+            
+            PreparedStatement prpstm =null;
+            ResultSet rs =null;
+            String countrycode, providercode, number;
+            MobilePhone mph=null;
+            Collection<MobilePhone> cmph= new ArrayList<>();
+            
+            Connection con=JDBCUtillite.getConnection();
+            try {
+                prpstm=con.prepareStatement(sqlcmd, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                prpstm.setString(1, p.getFirstName());
+                prpstm.setString(2, p.getLastName());
+                prpstm.setString(3, p.getBirthday().toString());
+                rs = prpstm.executeQuery();
+            } catch (SQLException ex) {
+                Logger.getLogger(PersonService.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try{
+            while(rs.next()){
+                countrycode=rs.getString("COUNTRYCODE");
+                providercode=rs.getString("PROVIDERCODE");
+                number=rs.getString("NUMB"); 
+                mph=Factory.createMobilePhone(countrycode, providercode, number);
+                cmph.add(mph);
+            }
+            }catch(SQLException ex){
+                 Logger.getLogger(PersonService.class.getName()).log(Level.SEVERE, null, ex);    
+                    }
+            return cmph;
+        
+        
+        
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

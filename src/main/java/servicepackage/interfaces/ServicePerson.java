@@ -5,7 +5,9 @@
  */
 package servicepackage.interfaces;
 
+import com.mycompany.contaktbook.entitypackage.MobilePhone;
 import com.mycompany.contaktbook.entitypackage.Person;
+import java.util.Collection;
 import org.joda.time.LocalDate;
 
 /**
@@ -14,4 +16,5 @@ import org.joda.time.LocalDate;
  */
 public interface ServicePerson extends Service<Person>{
 long getIdBy(String firstName, String lastName, LocalDate birthday);
+Collection<MobilePhone> getMobilePhones(Person p);
 }
